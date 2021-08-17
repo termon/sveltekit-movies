@@ -1,13 +1,15 @@
 <script context="module">
 	export const load = async ({ page, fetch }) => {
 		const id = page.params.id;
-		const resp = await fetch(`/api/people/${id}.json`);
-		const json = await resp.json();
-		return {
-			props: {
-				person: json
-			}
-		};
+		const resp = await fetch(`/api/person/${id}.json`);
+		if (resp.ok) {
+			const json = await resp.json();
+			return {
+				props: {
+					person: json
+				}
+			};
+		}
 	};
 </script>
 

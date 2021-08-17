@@ -1,22 +1,22 @@
 <script lang="ts">
 	import Carousel from '$lib/Carousel.svelte';
 	import type { IMovie } from 'src/global';
-  import { posterUrl } from '$lib/helpers'
+  	import { posterUrl } from '$lib/helpers'
 
-  export let movie: IMovie;
+  	export let movie: IMovie;
 
 </script>
 
 {#if movie}
-	<div class="card shadow-lg p-3 mb-5">
-		<!-- carousel -->
+	<div class="card shadow-lg p-3 my-5">
+		<!-- Poster -->
 		<div class="row g-0 mb-4">
-			<Carousel posters={movie.images.backdrops} count={5} />
+			<!-- <img src={posterUrl(movie.poster_path)} class="card-img-top img-fluid" alt="..." /> -->
 		</div>
-		<!-- card body -->
 		<div class="row g-0">
+			<!-- carousel -->
 			<div class="col-md-4">
-				<img src={posterUrl(movie.poster_path)} class="card-img-top img-fluid" alt="..." />
+				<Carousel posters={movie.images.backdrops} count={5} />
 			</div>
 			<div class="col-md-8">
 				<div class="card-body">

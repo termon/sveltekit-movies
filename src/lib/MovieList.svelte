@@ -11,7 +11,7 @@
 	}
 </script>
 
-<table class="table mt-4">
+<table class="table table-sm mt-4">
 	<thead>
 		<tr>
 			<th scope="col">Id</th>
