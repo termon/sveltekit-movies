@@ -1,7 +1,7 @@
 <script>
 	import MovieSearch from '$lib/MovieSearch.svelte';
 	import MovieDetails from '$lib/MovieDetails.svelte';
-	import MovieList from '$lib/MovieList.svelte';
+	import MovieList from '$lib/MovieListPoster.svelte';
 	import Pagination from '$lib/Pagination.svelte';
 
 	let movies = [];
@@ -52,6 +52,7 @@
 <MovieDetails {movie} />
 
 <MovieList on:selected={handleSelected} {movies} />
+
 {#if movies.length > 0}
 	<Pagination totalpages={totalPages} page={page} on:page={handlePage}/>
 {/if}

@@ -20,36 +20,38 @@
 </script>
 
 <form on:submit|preventDefault={dispatchSearch}>
-	<div class="row">
-		<input class="col-10 form-input" bind:value={search} placeholder="search...." />
-		<button
-			type="reset"
-			{disabled}
-			class="btn btn-warning btn-rounded col-1 mx-3"
-			on:click={dispatchClear}>Clear</button
-		>
-	</div>
 
-	<div class="row mt-2">
-		<div class="col-2">
+	<div class="d-flex flex-wrap align-items-center justify-content-start mb-2">
+		<span class="fs-4 fw-bold me-4">Search</span>
+		<div class="me-4">
 			<input type="radio" name="customSearch" value=":popular" on:click={customSearch} />
 			<label for="customSearch">Popular</label>
 		</div>
-		<div class="col-2">
+		<div class="me-4">
 			<input type="radio" name="customSearch" value=":top" on:click={customSearch} />
 			<label for="customSearch">Top Rated</label>
 		</div>
-		<div class="col-2">
+		<div class="me-4">
 			<input type="radio" name="customSearch" value=":trending" on:click={customSearch} />
 			<label for="customSearch">Trending</label>
 		</div>
-		<div class="col-2">
+		<div class="me-4">
 			<input type="radio" name="customSearch" value=":playing" on:click={customSearch} />
 			<label for="customSearch">Now Playing</label>
 		</div>
-		<div class="col-2">
+		<div class="me-4">
 			<input type="radio" name="customSearch" value=":upcoming" on:click={customSearch} />
 			<label for="customSearch">Upcoming</label>
 		</div>
+	</div>
+
+	<div class="row">
+		<input class="col-9 form-input" bind:value={search} placeholder="search...." />
+		<button
+			type="reset"
+			{disabled}
+			class="btn btn-warning btn-rounded col-2 mx-3"
+			on:click={dispatchClear}>Clear</button
+		>
 	</div>
 </form>

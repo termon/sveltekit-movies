@@ -1,15 +1,18 @@
 // TheMovieDb API Fetch functions
 export function fetchMoviesByQuery(search:string, page=1): Promise<Response> {
-    console.log("QueryUrl", _movieQueryUrl(search,page ))
+    //console.log("MovieQueryUrl", _movieQueryUrl(search,page ))
     return fetch(_movieQueryUrl(search, page),_getTokenObj())
 }
 export function fetchMovieById(id:string): Promise<Response> {
+    //console.log("MovieUrl", _movieUrl(id))
     return fetch(_movieUrl(id),_getTokenObj())    
 }
 export function fetchPeopleByQuery(search:string): Promise<Response> {
+    //console.log("PersonQueryUrl", _personQueryUrl(search))
     return fetch(_personQueryUrl(search),_getTokenObj())
 }
 export function fetchPersonById(id:string): Promise<Response> {
+    //console.log("PersonUrl", _personUrl(id))
     return fetch(_personUrl(id),_getTokenObj())
 }
 export function posterUrl(poster:string, size='original', path='https://image.tmdb.org/t/p/'):string {
